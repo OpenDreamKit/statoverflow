@@ -36,8 +36,8 @@ def exec(conffile=sys.stdin):
         for s in conf['sites']:
             try:
                 data = fetch_tags(conf['tags'], site=s)
+                write_counts(data, site=s, out=out)
             except Exception as e:
                 print('Error fetching data %r in %s' % (e, s), file=sys.stderr)
-            write_counts(data, site=s, out=out)
 
 exec()
