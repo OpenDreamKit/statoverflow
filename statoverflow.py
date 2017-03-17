@@ -21,7 +21,7 @@ def fetch_tags(tags, site='stackoverflow'):
     else:
         f = res
     items = {}
-    for i in json.load(f)['items']:
+    for i in json.loads(f.read().decode())['items']:
         items[i['name']] = i
     return items
 
