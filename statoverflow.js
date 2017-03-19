@@ -1,7 +1,7 @@
 /* Life is to short to comment your code */
 
 function h(c, attrs, content) {
-    let [_, tag, id, cls] = /(\w+)(?:#(\w+))?(?:\.(\w+))?/.exec(c);
+    let [_, tag, id, cls] = /(\w+)(?:#([\w-_]+))?(?:\.([\w-_]+))?/.exec(c);
     let e = document.createElement(tag);
     cls && (e.className = cls);
     id && (e.id = id);
